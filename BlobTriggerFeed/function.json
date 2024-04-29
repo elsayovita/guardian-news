@@ -1,0 +1,26 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myblob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "functionblob/today_feed.csv",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "outputBlob",
+      "path": "functionblob/{DateTime:yyyy-MM-dd}_feed_content.csv",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "outputBlob2",
+      "path": "functionblob/today_feed_content.csv",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
